@@ -1,0 +1,10 @@
+ NewRequest←{
+ ⍝ ⍵ ←→ Token
+     r←⎕NS''
+     r.Token←⍵
+     r.RequestedAt←10 ⎕DT⊂⎕TS  ⍝ Nanosecond precision
+     r.ThreadID←⎕TID           ⍝ TODO: What happens if this thread gets killed and recreated?
+     r.GUID←GUID''
+     ⎕THIS.ActiveRequests,←r   ⍝ TODO: Cleanup externally killed threads?
+     r
+ }

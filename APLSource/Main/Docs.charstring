@@ -1,0 +1,19 @@
+Run `Init` before use of this library
+
+You just run TGET on a TOKEN *                    
+
+There is no special TPUT function. You Put a token using ⎕TPUT.
+
+* Currently did not implement logic for MULTIPLE token gets in one request
+  although it may not be complicated to implement.  
+  
+  
+  
+TGET
+ - Create a new request object
+ - The end of the function will WAIT (TGET) on a psuedo token
+  - This token is UNIQUE and RELEASE of this is controlled by the Schedular
+ - Before we WAIT, we want to Run a job
+  - This job must wait for the ACTUAL TOKEN being requested first
+  - as SOON as it can continue, we release the GUID of the EARLIEST thread 
+

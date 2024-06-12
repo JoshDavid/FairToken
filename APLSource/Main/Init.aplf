@@ -1,0 +1,7 @@
+ Init←{
+⍝ THIS RESETS EVERYTHING, Run this before doing anything
+     _←⎕TGET ⎕TPOOL∩SchedularToken''  ⍝ Reset
+     _←⎕TPUT SchedularToken''         ⍝ Seed with 1 = simulate a HOLD with ⎕TGET
+     ⎕THIS.ActiveRequests←⍬
+     0
+ }

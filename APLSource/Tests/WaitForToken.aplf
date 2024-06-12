@@ -1,0 +1,5 @@
+ WaitForToken←{
+     _←LogThread'waiting for token'
+     _←⎕TGET Token 1
+     LogThread'has got the token'
+ }

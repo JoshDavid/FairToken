@@ -1,0 +1,4 @@
+ Reset←{
+     _←LogSection'Resetting all threads'
+     ⎕TGET ⎕TPOOL
+ }

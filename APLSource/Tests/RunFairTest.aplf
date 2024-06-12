@@ -1,0 +1,30 @@
+ RunFairTest←{
+     _←Reset ⍬
+     FT←##.Main
+     _←FT.Init''
+     n←10
+     t←WaitForTokenFair&¨n⍴⍬
+     _←PauseThisThread''
+     _←LogSection'Created ',(⍕n),' threads :',(⍕t)
+     _←LogSection'Current view of the schedular (⍋ by req time):'
+     ⎕←FT.SchedularToText''
+     _←PauseThisThread''
+     _←LogSection n,'Threads queued, now add ',(⍕n-1),' tokens to pool'
+     _←PutTokens n-1
+     _←PauseThisThread''
+     _←LogSection'One thread waiting. View of schedular:'
+     ⎕←FT.SchedularToText''
+     _←LogSection'Let''s add another thread to the queue'
+     _←WaitForTokenFair&⍬
+     _←PauseThisThread'' ⍝ Just to be careful
+     ⎕←FT.SchedularToText''
+     _←LogSection'Now put one more token:'
+     _←PutTokens 1
+     _←PauseThisThread''
+     ⎕←FT.SchedularToText''
+     _←LogSection'Now put the final token:'
+     _←PutTokens 1
+     _←PauseThisThread''
+     ⎕←FT.SchedularToText''
+
+ }

@@ -1,0 +1,5 @@
+ Assert←{
+     ⍺←'assertion failure'
+     0∊⍵:⍺ ⎕SIGNAL 8
+     0
+ }

@@ -1,0 +1,4 @@
+ PutTokens←{
+     _←LogThread'Put ',(⍕⍵),' token',(⍵>1)/'s'
+     ⎕TPUT Token ⍵
+ }

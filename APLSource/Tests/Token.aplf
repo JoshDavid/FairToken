@@ -1,0 +1,5 @@
+ Token←{
+⍝ ⍵ ←→ number of tokens to put
+     ⍵=1:2
+     ⍵⍴2
+ }

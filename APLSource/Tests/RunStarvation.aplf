@@ -1,0 +1,18 @@
+ RunStarvation←{
+     _←Reset ⍬
+     n←10
+     t←WaitForToken&¨⍳n
+     _←PauseThisThread''
+     _←LogSection'Created ',(⍕n),' threads :',(⍕t)
+     _←PauseThisThread''
+     _←LogSection n,'Threads queued, now add ',(⍕n-1),' tokens to pool'
+     _←PutTokens n-1
+     _←PauseThisThread''
+     _←LogSection'One thread waiting, lets add another token to the pool'
+     _←WaitForToken&⍬
+     _←PauseThisThread'' ⍝ Just to be careful
+     _←PutTokens 1
+     _←LogSection'Now put the final token:'
+     _←PutTokens 1
+
+ }

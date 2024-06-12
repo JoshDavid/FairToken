@@ -1,0 +1,5 @@
+ WaitForTokenFair←{
+     _←LogThread'Before FairTest.TGET on REAL Token'
+     _←##.Main.TGET Token 1
+     LogThread'After FairTest.TGET on REAL Token'
+ }

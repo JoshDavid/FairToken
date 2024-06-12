@@ -1,0 +1,13 @@
+ TGET←{
+⍝ ⍵ ←→ Token
+⍝      Should we require ⎕TS as an arg?
+⍝      Otherwise thread could switch before we enter
+⍝      which means it's probably not fair?
+⍝ TODO
+⍝ -Implement optional ⍺ timeout
+⍝ -Implement logic for -/+ tokens
+⍝ Make sure Init was run once before using this space
+     r←NewRequest ⍵
+     _←ReleaseEarliestRequest&⍵ ⍝ Can I ONLY Do a release on a Token UPDATE? -- multiple tokens may screw this up.
+     ⎕TGET r.GUID               ⍝ Probably do not need to diamondize this with above line if above doesn't thread switch
+ }
