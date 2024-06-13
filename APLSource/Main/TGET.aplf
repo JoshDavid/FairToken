@@ -1,8 +1,5 @@
  TGET←{
 ⍝ ⍵ ←→ Token
-⍝      Should we require ⎕TS as an arg?
-⍝      Otherwise thread could switch before we enter
-⍝      which means it's probably not fair?
 ⍝ TODO
 ⍝ -Implement optional ⍺ timeout
 ⍝ -Implement logic for -/+ tokens

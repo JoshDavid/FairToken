@@ -2,13 +2,12 @@
  ⍝ ⍵ ←→ token
   ⍝   _←##.Tests.LogThread 'Before waiting for actual token'
      _←⎕TGET ⍵
-     _←⎕TGET SchedularToken''   ⍝ Hold the schedular
+     _←⎕TGET SchedulerToken''   ⍝ Hold the schedular
      r←⎕THIS.ActiveRequests
      b←⍵⍷r.Token
      _←Assert 0<+/b             ⍝ No such token in pool?
      i←⊃⍋(b/r).RequestedAt
-     _←##.Tests.LogThread'Got actual token -- but going to release thread: ',⍕r[i].ThreadID
-     _←FreeRequest r[i]         ⍝ Free Earliest "PseudoGUID" of token
+     _←##.Tests.LogThread'Got actual token -- but going to release thread: ',(⊃b/r).ThreadID
      ⍝ maybe the PsuedoToken should be a combination of TS and Token
-     ⎕TPUT SchedularToken''
+     ⎕TPUT SchedulerToken''
  }

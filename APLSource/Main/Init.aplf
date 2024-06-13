@@ -1,7 +1,8 @@
  Init←{
-⍝ THIS RESETS EVERYTHING, Run this before doing anything
-     _←⎕TGET ⎕TPOOL∩SchedularToken''  ⍝ Reset
-     _←⎕TPUT SchedularToken''         ⍝ Seed with 1 = simulate a HOLD with ⎕TGET
+ ⍝ THIS RESETS EVERYTHING, Run this before doing anything
+ ⍝ This function ensures only 1 Scheduler Token in Pool
+     _←⎕TGET ⎕TPOOL∩SchedulerToken''  ⍝ Reset
+     _←⎕TPUT SchedulerToken''         ⍝ Seed with 1 = simulate a HOLD with ⎕TGET
      ⎕THIS.ActiveRequests←⍬
      0
  }
