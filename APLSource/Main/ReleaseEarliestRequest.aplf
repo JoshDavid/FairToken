@@ -6,8 +6,8 @@
      r←⎕THIS.ActiveRequests
      b←⍵⍷r.Token
      _←Assert 0<+/b             ⍝ No such token in pool?
-     i←⊃⍋(b/r).RequestedAt
      _←##.Tests.LogThread'Got actual token -- but going to release thread: ',(⊃b/r).ThreadID
+     _←FreeRequest⊃b/r         ⍝ Free Earliest "PseudoGUID" of token
      ⍝ maybe the PsuedoToken should be a combination of TS and Token
      ⎕TPUT SchedulerToken''
  }
