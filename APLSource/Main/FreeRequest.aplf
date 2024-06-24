@@ -2,6 +2,6 @@
 ⍝ ⍵ ←→ Response Object
 ⍝ DOES NOT WORK ON MORE THAN 1 TOKEN PER REQUEST YET -- need to think about that
 ⍝ or just limit domain of this to not work on multiple tokens in a request
-     ⎕THIS.ActiveRequests~←⍵ ⍝ or do we need to lookup on guid
+     ⎕THIS.ActiveRequests~←⍵
      ⎕TPUT ⍵.UniqueTokenID
  }
