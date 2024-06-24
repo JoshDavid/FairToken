@@ -1,0 +1,10 @@
+ GetNextUniqueToken←{
+     ⎕THIS.AllocationBase+⎕TID÷10000000000      ⍝ 10 digits in a TID
+⍝    Could also look into minimal increments such as below,
+⍝    but that would require this operation to go under a HOLD
+⍝    p ← ⎕TPOOL
+⍝    a ← ⎕THIS.AllocationBase
+⍝    f ← p⌿⍨(a<p)^(p<a+1)
+⍝    m←⌈⌿a,f
+⍝    m+1E¯10
+ }

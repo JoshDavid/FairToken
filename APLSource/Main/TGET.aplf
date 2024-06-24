@@ -6,5 +6,5 @@
 ⍝ Make sure Init was run once before using this space
      r←NewRequest ⍵
      _←ReleaseEarliestRequest&⍵ ⍝ Can I ONLY Do a release on a Token UPDATE? -- multiple tokens may screw this up.
-     ⎕TGET r.GUID               ⍝ Probably do not need to diamondize this with above line if above doesn't thread switch
+     ⎕TGET r.UniqueTokenID
  }

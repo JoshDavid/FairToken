@@ -1,8 +1,10 @@
  Init←{
- ⍝ THIS RESETS EVERYTHING, Run this before doing anything
- ⍝ This function ensures only 1 Scheduler Token in Pool
+ ⍝ Run this to "initialize" this namespace for use
+ ⍝ - Ensure only 1 Scheduler Token in Pool
+ ⍝ - Setup required variables
      _←⎕TGET ⎕TPOOL∩SchedulerToken''  ⍝ Reset
      _←⎕TPUT SchedulerToken''         ⍝ Seed with 1 = simulate a HOLD with ⎕TGET
      ⎕THIS.ActiveRequests←⍬
+     ⎕THIS.AllocationBase←⎕TALLOC 1 'FairToken'
      0
  }

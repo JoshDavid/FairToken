@@ -3,7 +3,7 @@
      r←⎕NS''
      r.Token←⍵
      r.ThreadID←⎕TID           ⍝ TODO: What happens if this thread gets killed and recreated?
-     r.GUID←GUID''
+     r.UniqueTokenID←GetNextUniqueToken''
      ⎕THIS.ActiveRequests,←r   ⍝ TODO: Cleanup externally killed threads?
      r
  }

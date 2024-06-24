@@ -1,7 +1,0 @@
- GUID←{
-⍝ EXPERIMENTAL quick hack -- eventually this will be mcuh smarter using TALLOC maybe
-⍝ and sequential/smaller autokeys
-     _←'z'⎕NS''
-     _←z.⎕WC'OLEServer'
-     {⍎16↑⍵~'{}-',⎕A}z.ClassID
- }

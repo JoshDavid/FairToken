@@ -1,6 +1,6 @@
  SchedulerToText←{
      v←⎕THIS.ActiveRequests
-     h←'GUID' 'ThreadID' 'Token'
+     h←'UniqueTokenID' 'ThreadID' 'Token'
      0∊⍴v:h
      h⍪v∘.⍎h
  }
